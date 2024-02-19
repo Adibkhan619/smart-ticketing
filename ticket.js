@@ -7,48 +7,54 @@ function getSeatOnClick(elementId) {
     const seatContainer = document.getElementById('selected-seat-container');
     const p1 = document.createElement('li');
     p1.innerText = seatName;
-    seatContainer.appendChild(p1);
+    const addedSeat= document.getElementById('added-into-container');
+    addedSeat.appendChild(p1);
+
+    const seatClass = document.getElementById('seat-class');
+    const class1 = document.createElement('p');
+    class1.innerText = 'Economy';  
+    seatClass.appendChild(class1);
+
+    const seatPrice = document.getElementById('seat-price');
+    const price1 = document.createElement('p');
+    price1.innerText = '550';
+    seatPrice.appendChild(price1);
 
     // adding Seat button color-------
     selectedSeat.style.background = '#1DD100';
     selectedSeat.style.color = 'white';
 
     // Seat count-----------
-
     const seatCount = document.getElementById('seat-count');
     const newSeatCount = seatCount.innerText;
     const updatedSeatCount = parseInt(newSeatCount);
     let finalSeatCount = updatedSeatCount + 1;
     seatCount.innerText = finalSeatCount;
 
-    // Seat available button--------
 
+
+// Seat available button--------
     const availableSeat = document.getElementById('available-seat');
     const newSeatAvailable = availableSeat.innerText;
     const updatedSeatAvailable = parseInt(newSeatAvailable);
     let finalSeatAvailable = updatedSeatAvailable - 1;
     availableSeat.innerText = finalSeatAvailable;
 
-    // Total Price ------
-
+// Total Price ------
     const totalPrice = document.getElementById('total-price');
     const price = totalPrice.innerText;
     const addedPrice = parseInt(price);
     const finalPrice = addedPrice + 550;
     totalPrice.innerText = finalPrice;
 
-
+// GrandTotal -----------
     const grandTotal = document.getElementById('grand-total');
     const grandTotalText = grandTotal.innerText;
     let grandTotalValue = parseInt(grandTotalText);
     grandTotalValue = finalPrice;
     grandTotal.innerText = grandTotalValue;
-    // console.log(grandTotalValue);
     return grandTotalValue;
 }
-
-// console.log(getSeatOnClick('total-price'));
-// coupon input
 
 function getElementTextById(elementId) {
     const noText = document.getElementById('coupon-input');
@@ -100,10 +106,18 @@ function checkInputs() {
     }
   }
 
-//   NEXT BUTTON---
+//   NEXT BUTTON-------
 function clickNext(){
     document.getElementById('next-button');
     const show = document.getElementById('success-model');
     show.classList.remove('hidden');
-
 }
+// continue button-----
+function clickContinue(){
+    document.getElementById('continue-button');
+    const hide = document.getElementById('success-model');
+    hide.classList.add('hidden');
+}
+
+
+

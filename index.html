@@ -301,7 +301,7 @@
                 <label class="input flex items-center gap-2">
                     <input type="text" class="grow  border-none" placeholder="Have any coupon?" id="coupon-input" />
                     
-                        <button class="btn bg-[#36ef16] text-white px-5 py-1 rounded-lg" onclick="getElementTextById()"  id="apply-button">Apply</button>
+                        <button class="btn bg-[#36ef16] text-white px-5 py-1 rounded-lg " onclick="getElementTextById()"  id="apply-button">Apply</button>
                   </label>
             </div>
 
@@ -314,22 +314,24 @@
             <!-- passenger form -->
             <p class="font-semibold inter-font">Passenger Name*</p>
             <label class="input input-bordered flex items-center gap-2">
-                <input type="text" class="grow" placeholder="Enter your name" />
+                <input id="input1" type="text" class="grow" placeholder="Enter your name" oninput="checkInputs()"/>
               </label>
 
               <p  class="font-semibold inter-font">Phone Number*</p>
               <label class="input input-bordered flex items-center gap-2">
                 
-                <input type="text" class="grow" placeholder="Enter your phone number" />
+                <input id="input2" type="text" class="grow" placeholder="Enter your phone number" oninput="checkInputs()"/>
               </label>
 
               <p class="font-semibold inter-font">Email ID*</p>
               <label class="input input-bordered flex items-center gap-2">
                 
-                <input type="text" class="grow" placeholder="Enter your email id" />
+                <input id="input3" type="text" class="grow" placeholder="Enter your email id" oninput="checkInputs()"/>
               </label>
            
-              <button class="w-full py-5 text-white bg-[#1DD100] mt-4 rounded-lg">Next</button>
+<a href="#success-model">
+                <button id="next-button" class="w-full py-5 mt-10 font-bold text-white bg-[#1DD100] rounded-lg custom-disabled-button" onclick="clickNext()" disabled >Next</button></a>
+
         </div>
     </div>    
     </section>
@@ -363,6 +365,17 @@
         </div>
     </div>
 </footer>
+
+<!-- success model section -->
+
+<div id="success-model" class=" inter-font border m-52 p-20  rounded-3xl flex flex-col justify-center  text-center space-y-6 ">
+    <img class="flex items-center justify-center mx-auto" src="/images/success.png" alt="">
+    <h1 class="text-[#27AE60] text-2xl font-bold">SUCCESS</h1>
+    <p class="font-medium text-xl text-[#4A4A4A]">Thank you for Booking Our Bus Seats. 
+        We are working hard to find the best service and deals for you.</p>
+    <p class="font-light text-xl text-[#4A4A4A]">Shortly you will find a confirmation in your email.</p>
+    <a class="mt-10" href="#seat-selection"><button class="bg-[#27AE60] justify-center text-white font-semibold text-xl px-36 py-3  rounded-3xl">Continue</button></a>
+</div>
 
 <script src="/ticket.js"></script>
 </body>

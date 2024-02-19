@@ -56,8 +56,6 @@ function getElementTextById(elementId) {
     const text = noText.value;
 
     if (text === 'NEW15') {
-        button.style.background = 'red';
-
 
         console.log('good');
         button.classList.add('hidden');
@@ -65,10 +63,8 @@ function getElementTextById(elementId) {
         const discounted = document.getElementById('grand-total');
         const discountAmount = discounted.innerText;
         const discountedPrice = discountAmount - (discountAmount*0.15);
-        // console.log(afterDiscount);    
+  
         discounted.innerText = discountedPrice;
-
-
 
     }
     else if (text === 'Couple 20') {
@@ -77,44 +73,37 @@ function getElementTextById(elementId) {
         const discounted = document.getElementById('grand-total');
         const discountAmount = discounted.innerText;
         const discountedPrice = discountAmount - (discountAmount*0.20);
-        // console.log(afterDiscount);    
+  
         discounted.innerText = discountedPrice;
 
     }
     else {
         console.log('bad');
-        button.style.backgroundColor = 'gray';
+        // button.classList.add('custom-disabled-button')
     }
-
-    // if(text == ''){
-    //     const button = document.getElementById('apply-button');
-    //     button.style.backgroundColor = 'red';
-    // }
-    // else{
-    //     console.log('bad');
-    // } 
 }
 
-// function grandTotal(){
-//       const grandTotal = document.getElementById('grand-total');
-//         const grandTotalText = grandTotal.innerText;
-//         const grandTotalValue = parseInt(grandTotalText);
-//         grandTotalValue = parseInt(getSeatOnClick(total-price)) ;
-//         grandTotal = grandTotalValue;
+// input field ------------
+function checkInputs() {
+    const input1 = document.getElementById('input1').value;
+    const input2 = document.getElementById('input2').value;
+    const input3 = document.getElementById('input3').value;
+    const nextButton = document.getElementById('next-button');
 
-//         console.log(grandTotalValue);
-// }
+    if (input1.trim() !== '' && input2.trim() !== '' && input3.trim() !== '') {
+      nextButton.removeAttribute('disabled');
+      nextButton.classList.remove('custom-disabled-button');
+    } 
+    else {
+      nextButton.setAttribute('disabled', 'disabled');
+      nextButton.classList.add('custom-disabled-button');
+    }
+  }
 
-// console.log(getSeatOnClick('total-price'));
-// function couponAdded() {
-//     const grandTotal = document.getElementById('grand-total');
-//     const grandTotalText = grandTotal.innerText;
-//     let grandTotalValue = parseInt(grandTotalText);
-//     grandTotalValue = getSeatOnClick('total-price');
-//     const total = grandTotalValue.innerText;
-//     total = grandTotal.innerText;
-//     console.log(total);
-//     // return grandTotalValue;
-// }
+//   NEXT BUTTON---
+function clickNext(){
+    document.getElementById('next-button');
+    const show = document.getElementById('success-model');
+    show.classList.remove('hidden');
 
-
+}
